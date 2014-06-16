@@ -1,39 +1,39 @@
 {
-  "name": "grunt-license-finder",
-  "description": "Finds licenses in a node project and its dependencies",
-  "version": "1.0.0",
-  "homepage": "https://github.com/iandotkelly/grunt-license-finder",
-  "author": {
-    "name": "Ian Kelly"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/iandotkelly/grunt-license-finder.git"
-  },
-  "bugs": {
-    "url": "https://github.com/iandotkelly/grunt-license-finder/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/iandotkelly/grunt-license-finder/blob/master/LICENSE"
+    "name": "grunt-license-finder",
+    "description": "Finds licenses in a node project and its dependencies",
+    "version": "1.0.1",
+    "homepage": "https://github.com/iandotkelly/grunt-license-finder",
+    "author": {
+        "name": "Ian Kelly"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/iandotkelly/grunt-license-finder.git"
+    },
+    "bugs": {
+        "url": "https://github.com/iandotkelly/grunt-license-finder/issues"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/iandotkelly/grunt-license-finder/blob/master/LICENSE"
     }
   ],
-  "engines": {
-    "node": ">= 0.10.0"
-  },
-  "scripts": {
-    "test": "grunt test"
-  },
-  "devDependencies": {
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt": "~0.4.4",
-    "grunt-cli": "~0.1.13"
-  },
-  "peerDependencies": {
-    "grunt": "~0.4.4"
-  },
-  "keywords": [
+    "engines": {
+        "node": ">= 0.10.0"
+    },
+    "scripts": {
+        "test": "grunt test"
+    },
+    "devDependencies": {
+        "grunt-contrib-jshint": "~0.10.0",
+        "grunt": "~0.4.4",
+        "grunt-cli": "~0.1.13"
+    },
+    "peerDependencies": {
+        "grunt": "~0.4.4"
+    },
+    "keywords": [
     "gruntplugin",
     "grunt",
     "license",
@@ -46,7 +46,7 @@
     "legal",
     "dependency"
   ],
-  "dependencies": {
-    "nlf": "^1.0.0"
-  }
+    "dependencies": {
+        "nlf": "^1.0.0"
+    }
 }

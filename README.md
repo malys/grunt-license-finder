@@ -66,13 +66,56 @@ Example
 ```js
 grunt.initConfig({
   license_finder: {
-    options: {
-      production: true,
-      directory: '/Home/me/some-project',
-      out: '/Home/me/some-project/licenses.txt',
-      csv: true
-    },
-  },
+    main:{
+        options: {
+          production: true,
+          directory: '/Home/me/some-project',
+          out: '/Home/me/some-project/licenses.txt',
+          csv: true,
+          checker: function (data) {
+            var badLicenses = ['GPL'];
+            var j;
+            var lim1 = data.length;
+            var globalList = [];
+            for (j = 0; j < lim1; j++) {
+                var dep = data[j];
+                var list = [];
+                list = list.concat(dep.licenseSources.package.summary());
+                list = list.concat(dep.licenseSources.license.summary());
+                list = list.concat(dep.licenseSources.readme.summary());
+
+                globalList.push({
+                    obj: dep,
+                    licenses: list
+                });
+
+            }
+            var result = [];
+            var i;
+            var limit = globalList.length;
+
+            for (i = 0; i < limit; i++) {
+                j = 0;
+                lim1 = badLicenses.length;
+                for (j = 0; j < lim1; j++) {
+
+                    if (globalList[i].licenses.indexOf(badLicenses[j]) > -1) {
+                        if (result.length === 0) {
+                            grunt.log.error('Detected viral Licenses :');
+                        }
+                        result.push(globalList[i].obj);
+                        grunt.log.error(globalList[i].obj.name + ' : ' + globalList[i].licenses.toString());
+                    }
+                }
+
+            }
+            if (result.length > 0) {
+                throw grunt.util.error('Viral Licenses has been detected !!!');
+            }
+        }
+        }
+    }
+  }
 });
 ```
 
